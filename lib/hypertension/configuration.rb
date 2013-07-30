@@ -8,7 +8,7 @@ module Hypertension
     config_accessor :base_uri, instance_accessor: false
 
     config_accessor :http_scheme, instance_accessor: false do
-      'https'
+      :https
     end
 
     config_accessor :headers, instance_accessor: false do
