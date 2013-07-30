@@ -1,5 +1,14 @@
 require "hypertension/version"
+require "hypertension/configuration"
+require "hypertension/railtie" if defined?(Rails)
 
 module Hypertension
-  # Your code goes here...
+  class << self
+    attr_accessor :configuration
+  end
+
+  def self.configure
+    self.configuration ||= Configuration.new
+    yield(configuration)
+  end
 end
