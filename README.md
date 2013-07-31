@@ -19,9 +19,13 @@ Or install it yourself as:
 
 ## Usage
 
-TBD.
+TBD - See wiki for latest API & Usage targets.
 
 ## Contributing
+
+[![Build Status](https://travis-ci.org/jsmestad/hypertension.png)](https://travis-ci.org/jsmestad/hypertension)
+
+[![Code Climate](https://codeclimate.com/repos/51f8565d56b1023a14035fac/badges/29a96885142d2d92b284/gpa.png)](https://codeclimate.com/repos/51f8565d56b1023a14035fac/feed)
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
@@ -31,4 +35,4 @@ TBD.
 
 ## License
 
-See LICENSE file for more information.
+See LICENSE file for details information.
