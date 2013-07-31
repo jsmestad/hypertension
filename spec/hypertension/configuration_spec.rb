@@ -1,14 +1,14 @@
 require 'spec_helper'
 
-describe Hypertension, '.configure' do
-  it { should respond_to(:configure) }
+# describe Hypertension, '.configure' do
+  # it { should respond_to(:configure) }
 
-  specify { expect { |b| described_class.configure(&b) }.to yield_with_args(Hypertension::Configuration) }
+  # specify { expect { |b| described_class.configure(&b) }.to yield_with_args(Hypertension::Configuration) }
 
-  its(:configure) { should be_a(Hypertension::Configuration) }
-end
+  # its(:configure) { should be_a(Hypertension::Configuration) }
+# end
 
-describe Hypertension::Configuration do
+describe Hypertension::Client do
   let(:configuration) { described_class.new }
 
   subject { configuration.config }
@@ -44,7 +44,7 @@ describe Hypertension::Configuration do
     end
 
     it 'defaults the User Agent to identify the client is Hypertension' do
-      subject[:user_agent].should match(/Hyptertension v\d+\.\d+\.\d+;/)
+      subject[:user_agent].should match(/Hypertension v\d+\.\d+\.\d+;/)
     end
   end
 end
