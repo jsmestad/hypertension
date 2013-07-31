@@ -36,7 +36,15 @@ describe Hypertension::Configuration do
   end
 
   describe '#headers' do
-    it { should respond_to(:headers) }
-    its(:headers) { should have_a_default_of({}) }
+
+    subject { configuration.config.headers }
+
+    it 'defaults the Accept Headers to HAL' do
+      subject[:accept].should == 'application/hal+json'
+    end
+
+    it 'defaults the User Agent to identify the client is Hypertension' do
+      subject[:user_agent].should match(/Hyptertension v\d+\.\d+\.\d+;/)
+    end
   end
 end

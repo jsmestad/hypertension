@@ -1,3 +1,4 @@
+require 'socket'
 require 'active_support/configurable'
 
 module Hypertension
@@ -22,7 +23,10 @@ module Hypertension
     end
 
     config_accessor :headers do
-      {}
+      {
+        accept:     'application/hal+json',
+        user_agent: "Hyptertension v#{Hypertension::VERSION}; #{Socket.gethostname}"
+      }
     end
 
   end
