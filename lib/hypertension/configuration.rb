@@ -1,6 +1,16 @@
 require 'active_support/configurable'
 
 module Hypertension
+  class << self
+    attr_accessor :configuration
+  end
+
+  def self.configure
+    self.configuration ||= Configuration.new
+    yield(configuration) if block_given?
+    return self.configuration
+  end
+
   class Configuration
     # https://github.com/rails/rails/blob/master/activesupport/lib/active_support/configurable.rb
     include ActiveSupport::Configurable
